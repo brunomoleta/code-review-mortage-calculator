@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  const props = defineProps<{ isSelected: boolean }>()
+  defineProps<{ isSelected: boolean }>()
 </script>
 
 <template>

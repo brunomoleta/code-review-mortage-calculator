@@ -17,7 +17,7 @@ const result = ref<number>()
 const errors = ref<Errors>({})
 
 
-const showResults = (e: Event) => {
+const showResults = () => {
   const fields = [
     ['mortgageAmount', mortgageAmount.value],
     ['mortgageTerm', mortgageTerm.value],
@@ -25,7 +25,7 @@ const showResults = (e: Event) => {
     ['mortgageType', mortgageType.value],
   ];
 
-  fields.forEach(([key, value]) => validateField(key, value));
+  fields.forEach(([key, value]) => validateField(key as string, value));
   if (Object.keys(errors.value).length === 0) {
     const principal = mortgageAmount.value!;
     const annualRate = interestRate.value!;
